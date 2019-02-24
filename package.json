@@ -1,0 +1,33 @@
+{
+    "name": "node-microservice",
+    "version": "1.0.0",
+    "description": "Micro Service",
+    "main": "server/server.js",
+    "scripts": {
+        "start": "nodemon server/server.js",
+        "test": "mocha \"./{,!(node_modules)/**/}*.test.js\"",
+        "watch-test": "nodemon --exec \"npm test\""
+    },
+    "dependencies": {
+        "chai": "4.2.0",
+        "expect": "24.1.0",
+        "supertest": "3.4.2",
+        "express": "4.16.4",
+        "mocha": "6.0.0",
+        "nodemon": "1.18.10",
+        "lodash": "4.17.11",
+        "bcryptjs": "2.4.3",
+        "validator": "10.11.0",
+        "jsonwebtoken": "8.4.0",
+        "body-parser": "1.18.3",
+        "json-patch": "0.7.0",
+        "jsonpatch": "3.0.1",
+        "image-downloader": "3.4.2",
+        "resize-image": "0.1.0"
+    },
+    "keywords": [
+        "NodeJS"
+    ],
+    "author": "Akita",
+    "license": "ISC"
+}
