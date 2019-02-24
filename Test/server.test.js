@@ -9,7 +9,6 @@ describe('POST /users/login', () => {
     it("login user with valid credentials", (done) => {
         let email = "rootuser@email.com";
         let password = "rootuser";
-        // console.log(email);
         request(app)
             .post('/user/login')
             .send({ email, password })
@@ -24,7 +23,6 @@ describe('POST /users/login', () => {
     it("Should return validation errors", (done) => {
         let email = "email.com";
         let password = "rootuser";
-        // console.log(email);
         request(app)
             .post('/user/login')
             .send({ email, password })

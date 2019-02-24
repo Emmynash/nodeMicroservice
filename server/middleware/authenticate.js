@@ -10,7 +10,6 @@ let authenticate = (req, res, next) => {
         next();
     } catch (error) {
         res.status(401).send();
-        console.log(error);
         return Promise.reject(error);
     }
 }

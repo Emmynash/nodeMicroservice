@@ -29,7 +29,6 @@ app.post('/user/login', (req, res) => {
 
     } catch (error) {
         res.status(400).send();
-        console.log(error);
     }
 
 })
@@ -47,7 +46,6 @@ app.patch('/user/patch', authenticate, async(req, res) => {
         res.send(patchUserDoc);
 
     } catch (error) {
-        console.log(error);
         res.status(400).send();
     }
 })
@@ -60,13 +58,11 @@ app.post('/user/me/image', authenticate, (req, res) => {
             dest: "./public/images"
         })
         .then(({ filename, image }) => {
-            //  return buffer
             res.setHeader('Content-Type', 'image/jpg');
             res.send(image);
             return image;
         })
         .catch((err) => {
-            console.log(err)
             res.status(400).send(err)
         })
 

@@ -17,11 +17,16 @@ run npm install (installs all dependencies)
 run npm test
 
 >Testing POST user/login
-.email and password is required & email must be valid
+email and password are required & email must be valid
 example:
 {
     "email": "yourname@email.com",
     "passowrd": yourpassword"
+}
+
+returns:
+{
+    "09i43rjwfk0-mlksfkdcokkmdslcmkskfldmc............" //as a token
 }
 
 login returns a token, copy it to test other routes
@@ -35,6 +40,13 @@ example:
     "sex": "male"
 }
 
+returns:
+{
+    "age": "24",
+    "sex": "male",
+    "hobby": "reading"
+}
+
 >Testing POST user/me/image
 set header ('x-auth', token return from login)
 provide an image url
@@ -42,3 +54,5 @@ example:
 {
     "url": "https://sitename/folder/image.jpg"
 }
+
+returns the image thumbnail.
