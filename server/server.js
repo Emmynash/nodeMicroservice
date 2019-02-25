@@ -22,6 +22,7 @@ app.post('/user/login', (req, res) => {
         } else if (body.password.length == 0) {
             return res.status(400).send(`Password is required!`);
         }
+
         let userId = 00247;
         let token = jwt.sign({ _id: userId, access: "auth" }, "tokenfy").toString();
 
