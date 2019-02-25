@@ -65,11 +65,12 @@ describe("POST user/me/image", () => {
         this.timeout(0);
         let userId = 00247;
         let token = jwt.sign({ _id: userId, access: "auth" }, "tokenfy").toString();
+        let url = "http://nhubnigeria.com/img/retnan.jpg";
 
         request(app)
             .post('/user/me/image')
             .set({ 'x-auth': token })
-            .send({ url: "http://nhubnigeria.com/img/retnan.jpg" })
+            .send({ url })
             .expect(200)
             .expect((res) => {
                 expect(res).toBeTruthy();
