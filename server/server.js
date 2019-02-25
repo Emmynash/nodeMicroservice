@@ -8,7 +8,7 @@ const validator = require('validator');
 
 const { authenticate } = require('./middleware/authenticate');
 const app = express();
-const port = 8080;
+const port = 8080 || process.env.PORT;
 
 
 app.use(bodyParser.json());
