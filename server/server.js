@@ -54,6 +54,7 @@ app.patch('/user/patch', authenticate, async(req, res) => {
 app.post('/user/me/image', authenticate, (req, res) => {
 
     let body = _.pick(req.body, ['url']);
+
     download.image({
             url: body.url,
             dest: "./public/images"
