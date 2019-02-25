@@ -14,6 +14,7 @@ const port = 8080 || process.env.PORT;
 app.use(bodyParser.json());
 
 app.post('/user/login', (req, res) => {
+
     try {
         let body = _.pick(req.body, ['email', 'password'])
 
