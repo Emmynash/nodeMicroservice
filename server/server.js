@@ -22,9 +22,9 @@ app.post('/user/login', (req, res) => {
 
         // validate email & password
         if (!validator.isEmail(body.email)) {
-            return res.status(400).send(`${body.email} does not exist`);
+            return res.status(400).send({ success: false, message: `${body.email} does not exist` });
         } else if (body.password.length == 0) {
-            return res.status(400).send(`Password is required!`);
+            return res.status(400).send({ success: false, message: `Password is required!` });
         }
 
         // create a jsonwebtoken
